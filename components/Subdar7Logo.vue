@@ -1,5 +1,5 @@
 <template>
-  <img id="subdar7-logo" src="../assets/logo.jpg" />
+  <img id="subdar7-logo" class="flex flex-col" src="~/assets/images/logo.jpg" />
 </template>
 
 <script>

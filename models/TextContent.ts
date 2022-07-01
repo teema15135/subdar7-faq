@@ -1,5 +1,4 @@
-<script lang="ts">
-import Content from "./Content.vue";
+import Content from "@/models/Content";
 
 export default class TextContent extends Content {
     text: String
@@ -9,4 +8,3 @@ export default class TextContent extends Content {
         this.text = text
     }
 }
-</script>

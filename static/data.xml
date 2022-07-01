@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs>
+  <faq>
+    <title>Q1</title>
+    <contents>
+      <text>Text1</text>
+      <image>ImageLink1</image>
+      <link></link>
+    </contents>
+  </faq>
+  <faq>
+    <title>Q2</title>
+    <contents>
+      <text>Text2</text>
+    </contents>
+  </faq>
+</faqs>

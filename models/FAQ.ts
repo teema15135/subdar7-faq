@@ -1,5 +1,4 @@
-<script lang="ts">
-import Content from './Content.vue'
+import Content from '@/models/Content'
 
 export default class FAQ {
     title: String
@@ -10,4 +9,3 @@ export default class FAQ {
         this.contents = contents
     }
 }
-</script>
