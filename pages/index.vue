@@ -1,8 +1,12 @@
 <template>
-  <div class="flex flex-col items-center">
-    <Subdar7Logo />
-    <SearchBox v-on:stateChange="onSearchTextBoxChanged($event)"/>
-    <p>{{ searchText }}</p>
+  <div class="flex flex-row items-start justify-center">
+    <div class="flex flex-col items-center">
+      <Subdar7Logo />
+      <SearchBox 
+        class="mb-8"
+        v-on:stateChange="onSearchTextBoxChanged($event)" />
+      <FaqList :faqList="faqList" />
+    </div>
   </div>
 </template>
 
@@ -14,7 +18,7 @@ export default Vue.extend({
   name: 'IndexPage',
   data() {
     return {
-      searchText: ""
+      faqList: [],
     }
   },
   mounted() {
@@ -22,13 +26,18 @@ export default Vue.extend({
   },
   methods: {
     onSearchTextBoxChanged(text: string) {
-      this.searchText = text
+      console.log(text)
+    },
+    onFaqListLoaded() {
+      console.log(this.$store.state.faqs)
+      this.faqList = this.$store.state.faqs
     },
     async fetchData() {
-      const data = await this.$axios.$get("./data.xml")
+      const data = await this.$axios.$get('./data.xml')
       const parsedData = DataParser.parseXmlData(data)
       this.$store.commit('setFaqs', parsedData)
-    }
-  }
+      this.onFaqListLoaded()
+    },
+  },
 })
 </script>
